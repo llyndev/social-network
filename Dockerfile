@@ -6,6 +6,6 @@ RUN pip install poetry
 
 RUN poetry install
 
-EXPOSE 8000
+EXPOSE 80
 
 CMD [ "poetry", "run", "task", "prod" ]
