@@ -1,9 +1,5 @@
-from fastapi import APIRouter
-from src.datalayer.models.user import UserModel
-from src.api.authentication import verify_token
-from typing import Annotated
-from fastapi import Depends
-
+from fastapi import APIRouter, Request
+from src.api.authentication import login_required
 
 router = APIRouter(
     prefix="/me",
@@ -11,11 +7,10 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-@router.post("/")
-
-async def my_informations(current_user: Annotated[UserModel, Depends(verify_token)]):
-    print('current_user', current_user)
-    return {'user': current_user}
+@router.get("/")
+@login_required
+async def my_informations(request: Request):
+    return {'user': request.current_user}
 
 
 
