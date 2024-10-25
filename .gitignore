@@ -1,3 +1,4 @@
 *.pyc
 .venv
 db.sqlite3*
+lightsail push-container-image --region us-east-1 --service-name socialnetworkpy --label socialnetworkpy --image socialnetworkpy:latest --profile default
