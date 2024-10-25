@@ -8,14 +8,15 @@ export const Fetcher = async (configFetch) => {
             'Authorization': localStorage.getItem('__token'),
         },
         body: configFetch.data ? JSON.stringify(configFetch.data):null
-    })
+    });
 
     const response = await r.json();
 
     if (r.status == 200) {
-        return response
+        return response;
     } else {
-        console.log('fail: ' + response)
+        console.log('fail: ' + response);
+        return{};
     }
 
 }
