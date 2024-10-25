@@ -25,8 +25,6 @@ async def create_post(
     
     return {'post': response}
 
-# Meu token zFrpBukEozB3fCUfkQXYXUw1qHc
-
 @router.get('/all-posts')
 async def get_posts(service: Annotated[PostService, Depends(PostService)]):
     response = await service.get_all_posts()

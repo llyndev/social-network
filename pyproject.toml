@@ -10,7 +10,6 @@ python = "^3.9 || ^3.11"
 fastapi = {extras = ["standard"], version = "^0.115.3"}
 tortoise-orm = "^0.21.7"
 
-
 [tool.poetry.group.dev.dependencies]
 taskipy = "^1.14.0"
 

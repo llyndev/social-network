@@ -11,6 +11,3 @@ router = APIRouter(
 @login_required
 async def my_informations(request: Request):
     return {'user': request.current_user}
-
-
-
